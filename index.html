@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For Mom & Dad · 어버이날 2026</title>
+<meta name="description" content="아빠 엄마, 사랑합니다 (그리고 오래오래 건강하세요)" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Nanum+Myeongjo:wght@400;700;800&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f4ede1;
+    --bg-warm: #ebe0cd;
+    --ink: #1f1611;
+    --ink-soft: #6b5240;
+    --rose: #b8463c;
+    --rose-deep: #7d2820;
+    --gold: #a67c3e;
+    --cream: #faf4e7;
+    --line: rgba(31, 22, 17, 0.15);
+    --shadow-sm: 0 4px 20px rgba(60, 30, 15, 0.08);
+    --shadow-md: 0 12px 40px rgba(60, 30, 15, 0.15);
+    --shadow-lg: 0 24px 60px rgba(60, 30, 15, 0.22);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Fraunces', 'Nanum Myeongjo', serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.1 0 0 0 0 0.05 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 4rem 1.5rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-inner { max-width: 900px; position: relative; }
+
+  .eyebrow {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+    letter-spacing: 0.45em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.2s forwards;
+  }
+
+  .eyebrow::before, .eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    vertical-align: middle;
+    margin: 0 1.2rem;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', 'Nanum Myeongjo', serif;
+    font-weight: 400;
+    font-size: clamp(3.2rem, 9vw, 6.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.5s forwards;
+  }
+
+  .hero h1 .ko {
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 800;
+    display: block;
+  }
+
+  .hero h1 .en {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--rose);
+    font-size: 0.6em;
+    display: block;
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero .tagline {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+    color: var(--ink-soft);
+    margin-top: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.9s forwards;
+  }
+
+  .hero .tagline em {
+    color: var(--rose);
+    font-style: normal;
+  }
+
+  /* Sticky note in hero */
+  .hero .sticky-note {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    background: #fff8b8;
+    padding: 1rem 1.2rem;
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--ink);
+    transform: rotate(6deg);
+    box-shadow: 4px 6px 15px rgba(0,0,0,0.12);
+    line-height: 1.3;
+    max-width: 180px;
+    opacity: 0;
+    animation: fadeIn 1s 1.5s forwards, wiggle 4s 2.5s ease-in-out infinite;
+  }
+
+  .hero .sticky-note::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 14px;
+    background: rgba(184, 70, 60, 0.4);
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(6deg); }
+    50% { transform: rotate(8deg); }
+  }
+
+  .hero .divider {
+    margin-top: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 1.2s 1.2s forwards;
+  }
+
+  .hero .divider svg {
+    width: 60px;
+    height: auto;
+  }
+
+  /* ===== SECTION TITLES ===== */
+  .section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .section-title .label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title .label::before, .section-title .label::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    vertical-align: middle;
+    margin: 0 1rem;
+    opacity: 0.6;
+  }
+
+  .section-title h2 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .section-title h2 .accent {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--rose);
+  }
+
+  .section-title .doodle {
+    display: block;
+    margin-top: 0.8rem;
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    transform: rotate(-1deg);
+  }
+
+  /* ===== INTRO LETTER ===== */
+  .intro {
+    max-width: 660px;
+    margin: 6rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .intro p {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    line-height: 2;
+    color: var(--ink-soft);
+    margin-bottom: 1.2rem;
+  }
+
+  .intro .strike {
+    text-decoration: line-through;
+    text-decoration-color: var(--rose);
+    text-decoration-thickness: 2px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+
+  .intro .handwritten {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    color: var(--rose);
+    font-size: 1.4em;
+    display: inline-block;
+    transform: rotate(-1deg);
+  }
+
+  .intro .ps {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--rose);
+    margin-top: 2rem;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+
+  /* ===== STATS (witty data section) ===== */
+  .stats {
+    max-width: 1100px;
+    margin: 4rem auto 6rem;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat {
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .stat .num {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--rose);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-feature-settings: "ss01";
+  }
+
+  .stat .num .small {
+    font-size: 0.5em;
+    color: var(--ink-soft);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .stat .label {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat .sub {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink-soft);
+  }
+
+  /* ===== GALLERY ===== */
+  .gallery-section {
+    padding: 4rem 1.5rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .gallery {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5rem 2rem;
+  }
+
+  .photo {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .photo.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .photo:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .photo .frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s ease;
+  }
+
+  .photo:hover img {
+    transform: scale(1.05);
+  }
+
+  .photo .caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem 1.5rem 1.2rem;
+    background: linear-gradient(to top, rgba(31, 22, 17, 0.92), rgba(31, 22, 17, 0.4) 60%, transparent);
+    color: var(--cream);
+    transform: translateY(15%);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .photo:hover .caption {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .photo .caption .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: rgba(250, 244, 231, 0.7);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .photo .caption .text {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  /* Editorial asymmetric layout */
+  .photo.p1 { grid-column: span 7; aspect-ratio: 4/3; }
+  .photo.p2 { grid-column: span 5; aspect-ratio: 3/4; }
+  .photo.p3 { grid-column: span 4; aspect-ratio: 3/4; }
+  .photo.p4 { grid-column: span 8; aspect-ratio: 16/10; }
+  .photo.p5 { grid-column: span 6; aspect-ratio: 1/1; }
+  .photo.p6 { grid-column: span 6; aspect-ratio: 1/1; }
+  .photo.p7 { grid-column: span 5; aspect-ratio: 4/5; }
+  .photo.p8 { grid-column: span 7; aspect-ratio: 4/3; }
+  .photo.p9 { grid-column: span 8; aspect-ratio: 16/10; }
+  .photo.p10 { grid-column: span 4; aspect-ratio: 3/4; }
+
+  /* ===== AWARDS (faux awards section) ===== */
+  .awards {
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .award {
+    text-align: center;
+  }
+
+  .award .medal {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+
+  .award h4 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .award .title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+
+  .award .winner {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    color: var(--rose);
+    font-size: 1.15rem;
+  }
+
+  /* ===== QUOTE ===== */
+  .quote {
+    max-width: 700px;
+    margin: 6rem auto;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .quote .mark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 6rem;
+    line-height: 0.5;
+    color: var(--rose);
+    opacity: 0.25;
+    margin-bottom: 1rem;
+  }
+
+  .quote blockquote {
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 400;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .quote cite {
+    display: block;
+    margin-top: 2rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* ===== GIFT ===== */
+  .gift-section {
+    padding: 4rem 1.5rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .gift-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .gift-wrap .arrow-doodle {
+    position: absolute;
+    top: -50px;
+    right: -10px;
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--rose);
+    transform: rotate(8deg);
+    z-index: 3;
+    pointer-events: none;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .gift-wrap .arrow-doodle svg {
+    display: block;
+    margin: 0.3rem auto 0;
+    width: 40px;
+  }
+
+  .gift-card {
+    background: var(--cream);
+    padding: 3rem 2rem 2.5rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    border: 1px solid var(--line);
+  }
+
+  .gift-card::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(166, 124, 62, 0.35);
+    pointer-events: none;
+  }
+
+  .gift-card .ribbon {
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .gift-card h3 {
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+    margin-bottom: 0.6rem;
+    color: var(--ink);
+  }
+
+  .gift-card .subtitle {
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .gift-card .coupon-frame {
+    margin: 0 auto;
+    max-width: 100%;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gift-card .coupon-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .gift-card .terms {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px dashed var(--line);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .gift-card .terms .term-title {
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .gift-card .terms ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .gift-card .terms li {
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.3rem;
+  }
+
+  .gift-card .terms li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--rose);
+    font-weight: bold;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    text-align: center;
+    padding: 4rem 1.5rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  footer .signature {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--rose);
+    margin-bottom: 0.5rem;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+
+  footer .meta {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+
+  footer .heart {
+    color: var(--rose);
+    margin: 0 0.3em;
+  }
+
+  footer .small-print {
+    margin-top: 1.5rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    .hero .sticky-note {
+      position: static;
+      transform: rotate(-2deg);
+      margin: 1.5rem auto;
+      max-width: 220px;
+    }
+    .gallery {
+      gap: 1.2rem;
+    }
+    .photo.p1, .photo.p2, .photo.p3, .photo.p4,
+    .photo.p5, .photo.p6, .photo.p7, .photo.p8,
+    .photo.p9, .photo.p10 {
+      grid-column: span 12;
+    }
+    .photo.p1, .photo.p4, .photo.p8, .photo.p9 { aspect-ratio: 4/3; }
+    .photo.p2, .photo.p3, .photo.p7, .photo.p10 { aspect-ratio: 3/4; }
+    .photo .caption {
+      transform: translateY(0);
+      opacity: 1;
+      padding: 1.5rem 1rem 1rem;
+    }
+    .photo .caption .text {
+      font-size: 1.15rem;
+    }
+    .intro, .quote, .awards {
+      margin: 3.5rem auto;
+    }
+    .gift-card {
+      padding: 2rem 1.2rem;
+    }
+    .gift-wrap .arrow-doodle {
+      top: -70px;
+      right: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="sticky-note">
+      이 사이트는<br/>
+      광고 없습니다 😉<br/>
+      광고: 케이크 ↓
+    </div>
+
+    <div class="eyebrow">May 8 · 2026 · 어버이날 한정판</div>
+
+    <h1>
+      <span class="ko">아빠 엄마,</span>
+      <span class="en">our forever favorites</span>
+    </h1>
+
+    <p class="tagline">— <em>평생 단골손님</em>이 되어주신 두 분께 —</p>
+
+    <div class="divider">
+      <svg viewBox="0 0 60 12" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="6" x2="22" y2="6" stroke="#a67c3e" stroke-width="0.8"/>
+        <circle cx="30" cy="6" r="2.5" fill="none" stroke="#b8463c" stroke-width="0.8"/>
+        <line x1="38" y1="6" x2="60" y2="6" stroke="#a67c3e" stroke-width="0.8"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <p>
+    <span class="strike">매년 카네이션 한 송이로 때우다가</span><br/>
+    올해는 <span class="handwritten">큰맘 먹고</span> 사진을 모아봤습니다.
+  </p>
+  <p>
+    같은 식탁, 같은 풍경, 같은 미소.<br/>
+    별거 아닌 것 같던 순간들이<br/>
+    돌아보니 가장 비싼 장면이었네요.
+  </p>
+  <div class="ps">P.S. 끝까지 보세요. 진짜 선물 있음 🎂</div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="section-title">
+    <span class="label">By the Numbers</span>
+    <h2>아들 <span class="accent">통계청</span> 발표</h2>
+    <span class="doodle">— 출처: 양심 기반 자체 집계 —</span>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="num">28<span class="small">년</span></div>
+      <div class="label">사랑받은 시간</div>
+      <div class="sub">하루도 안 빠짐</div>
+    </div>
+    <div class="stat">
+      <div class="num">10,220<span class="small">+</span></div>
+      <div class="label">"밥 먹었니?"</div>
+      <div class="sub">매일 갱신 중</div>
+    </div>
+    <div class="stat">
+      <div class="num">∞</div>
+      <div class="label">먹은 밥</div>
+      <div class="sub">단위: 그릇</div>
+    </div>
+    <div class="stat">
+      <div class="num">100<span class="small">%</span></div>
+      <div class="label">사랑 지분율</div>
+      <div class="sub">아빠/엄마 5:5</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="section-title">
+    <span class="label">Moments</span>
+    <h2>함께한 <span class="accent">순간들</span></h2>
+    <span class="doodle">— 마우스 올려보세요 (모바일은 그냥 보여요) —</span>
+  </div>
+
+  <div class="gallery">
+    <div class="photo p1">
+      <div class="frame"><img src="images/80852.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 01 · Family Dinner</div>
+        <div class="text">"치~즈" 하라 했더니 다들 다른 포즈 ㅋㅋ</div>
+      </div>
+    </div>
+    <div class="photo p2">
+      <div class="frame"><img src="images/84622.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 02 · Date Night</div>
+        <div class="text">아직도 데이트 중인 두 분 💕</div>
+      </div>
+    </div>
+    <div class="photo p3">
+      <div class="frame"><img src="images/86552.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 03 · Sweet Tooth</div>
+        <div class="text">엄마 디저트 앞에서 제일 행복</div>
+      </div>
+    </div>
+    <div class="photo p4">
+      <div class="frame"><img src="images/1000007813.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 04 · Mango Heaven</div>
+        <div class="text">망고빙수 = 아빠 미소 ON 스위치</div>
+      </div>
+    </div>
+    <div class="photo p5">
+      <div class="frame"><img src="images/1000009314.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 05 · Cheers</div>
+        <div class="text">바다 보면서 짠 — 인생샷 갱신</div>
+      </div>
+    </div>
+    <div class="photo p6">
+      <div class="frame"><img src="images/IMG_4439.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 06 · Ryokan Night</div>
+        <div class="text">유카타 커플룩 — 의도된 깔맞춤</div>
+      </div>
+    </div>
+    <div class="photo p7">
+      <div class="frame"><img src="images/IMG_4934.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 07 · Just Because</div>
+        <div class="text">사진 찍자니까 또 어색해진 두 분</div>
+      </div>
+    </div>
+    <div class="photo p8">
+      <div class="frame"><img src="images/IMG_4975.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 08 · Forever Young</div>
+        <div class="text">세월은 가도 두 분은 그대로</div>
+      </div>
+    </div>
+    <div class="photo p9">
+      <div class="frame"><img src="images/IMG_5095.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 09 · On the Road</div>
+        <div class="text">여행 가면 제일 신나시는 분들</div>
+      </div>
+    </div>
+    <div class="photo p10">
+      <div class="frame"><img src="images/IMG_6306.jpg" alt="" loading="lazy"/></div>
+      <div class="caption">
+        <div class="num">No. 10 · Keepsake</div>
+        <div class="text">이건 진짜 액자에 걸자</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards">
+  <div class="section-title">
+    <span class="label">Lifetime Achievement</span>
+    <h2>제 1회 <span class="accent">아들 시상식</span></h2>
+    <span class="doodle">— 심사위원: 본인 1인 / 만장일치 —</span>
+  </div>
+
+  <div class="awards-grid">
+    <div class="award">
+      <svg class="medal" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 5 L40 30 L52 5" stroke="#b8463c" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="40" cy="50" r="22" fill="#a67c3e" stroke="#7d2820" stroke-width="2"/>
+        <circle cx="40" cy="50" r="16" fill="#c89856" stroke="#7d2820" stroke-width="1"/>
+        <text x="40" y="56" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="14" font-weight="500" fill="#1f1611">No.1</text>
+      </svg>
+      <h4>Best Father</h4>
+      <div class="title">최고의 아빠</div>
+      <div class="winner">— 우리 아빠</div>
+    </div>
+
+    <div class="award">
+      <svg class="medal" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 5 L40 30 L52 5" stroke="#b8463c" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="40" cy="50" r="22" fill="#a67c3e" stroke="#7d2820" stroke-width="2"/>
+        <circle cx="40" cy="50" r="16" fill="#c89856" stroke="#7d2820" stroke-width="1"/>
+        <text x="40" y="55" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="14" font-weight="500" fill="#1f1611">★</text>
+      </svg>
+      <h4>Best Mother</h4>
+      <div class="title">최고의 엄마</div>
+      <div class="winner">— 우리 엄마</div>
+    </div>
+
+    <div class="award">
+      <svg class="medal" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 5 L40 30 L52 5" stroke="#b8463c" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="40" cy="50" r="22" fill="#a67c3e" stroke="#7d2820" stroke-width="2"/>
+        <circle cx="40" cy="50" r="16" fill="#c89856" stroke="#7d2820" stroke-width="1"/>
+        <text x="40" y="55" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="13" font-weight="500" fill="#1f1611">♥</text>
+      </svg>
+      <h4>Best Couple</h4>
+      <div class="title">베스트 커플</div>
+      <div class="winner">— 아직도 현역</div>
+    </div>
+
+    <div class="award">
+      <svg class="medal" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 5 L40 30 L52 5" stroke="#b8463c" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="40" cy="50" r="22" fill="#a67c3e" stroke="#7d2820" stroke-width="2"/>
+        <circle cx="40" cy="50" r="16" fill="#c89856" stroke="#7d2820" stroke-width="1"/>
+        <text x="40" y="55" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="13" font-weight="500" fill="#1f1611">∞</text>
+      </svg>
+      <h4>Lifetime VIP</h4>
+      <div class="title">28년 개근상</div>
+      <div class="winner">— 두 분 공동수상</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="mark">"</div>
+  <blockquote>
+    제일 받기만 한 사람이<br/>
+    제일 늦게 그걸 깨닫는다는 게<br/>
+    참, 미안한 일이에요.
+  </blockquote>
+  <cite>— 아들 마음 中 (2026 개정판)</cite>
+</section>
+
+<!-- GIFT -->
+<section class="gift-section">
+  <div class="section-title">
+    <span class="label">A Sweet Note</span>
+    <h2>달콤한 <span class="accent">한 조각</span></h2>
+    <span class="doodle">— 약속의 그 케이크 입니다 —</span>
+  </div>
+
+  <div class="gift-wrap">
+    <div class="arrow-doodle">
+      이 거예요!
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path d="M20 5 Q30 20 20 35" stroke="#b8463c" stroke-width="2" stroke-linecap="round"/>
+        <path d="M14 28 L20 35 L26 28" stroke="#b8463c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="gift-card">
+      <div class="ribbon">For Mom &amp; Dad</div>
+      <h3>화이트 스초생 케이크</h3>
+      <p class="subtitle">— 캡쳐해서 매장에서 보여주세요 —</p>
+
+      <div class="coupon-frame">
+        <img src="images/coupon.jpg" alt="투썸플레이스 화이트 스초생 케이크 쿠폰"/>
+      </div>
+
+      <div class="terms">
+        <span class="term-title">유의사항</span>
+        <ul>
+          <li>맛있게 드실 것</li>
+          <li>먹기 전 사진 필수 (아들 구독 중)</li>
+          <li>다이어트는 내일부터</li>
+          <li>쌍둥이 보내드린 거 아닙니다 — 사이좋게 나눠 드세요</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="signature">— 아들 승원 올림 —</div>
+  <div class="meta">Made with <span class="heart">♥</span> &amp; 약간의 <span class="heart">😅</span> · 2026</div>
+  <div class="small-print">※ 본 사이트의 사랑 표현은 비매품이며 환불되지 않습니다.</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.photo').forEach(p => observer.observe(p));
+</script>
+
+</body>
+</html>
